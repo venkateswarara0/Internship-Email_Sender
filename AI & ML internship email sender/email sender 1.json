@@ -1,0 +1,416 @@
+{
+  "name": "email sender 1",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "AI & ML INTERNSHIP EMAIL SENDER",
+        "formDescription": "Enter Company Name To Send An Email To The Ceo",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Company Name",
+              "placeholder": "Enter Company Name",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": false,
+          "customCss": ":root {\n\t/* -- Font & Typography (Unchanged) -- */\n\t--font-family: 'Inter', 'Open Sans', sans-serif; /* Suggested a more modern font */\n\t--font-weight-normal: 400;\n\t--font-weight-bold: 600;\n\t--font-size-body: 12px;\n\t--font-size-label: 14px;\n\t--font-size-test-notice: 12px;\n\t--font-size-input: 14px;\n\t--font-size-header: 20px;\n\t--font-size-paragraph: 14px;\n\t--font-size-link: 12px;\n\t--font-size-error: 12px;\n\t--font-size-html-h1: 28px;\n\t--font-size-html-h2: 20px;\n\t--font-size-html-h3: 16px;\n\t--font-size-html-h4: 14px;\n\t--font-size-html-h5: 12px;\n\t--font-size-html-h6: 10px;\n\t--font-size-subheader: 14px;\n\n\t/* -- Dark Mode Colors -- */\n\n\t/* Base & Background */\n\t--color-background: #111827; /* Deep, dark blue */\n\t--color-card-bg: #1F2937; /* Slightly lighter surface color */\n\t--color-card-border: #374151; /* Subtle border for definition */\n\t--color-card-shadow: rgba(168, 85, 247, 0.1); /* A soft violet glow */\n\n\t/* Typography */\n\t--color-header: #F9FAFB; /* Off-white for high contrast headings */\n\t--color-header-subtext: #9CA3AF; /* Lighter grey for sub-text */\n\t--color-label: #D1D5DB; /* Clear, readable label color */\n\t--color-input-text: #E5E7EB; /* Text color for inside form fields */\n\t--color-html-text: #D1D5DB; /* Main body text color */\n\n\t/* Accents & Actions */\n\t--color-link: #60A5FA; /* A cool, accessible blue for secondary links */\n\t--color-html-link: #A78BFA; /* Primary accent: a vibrant violet for main links */\n\t--color-focus-border: #A78BFA; /* Use primary accent for focus states */\n\t--color-submit-btn-bg: #F43F5E; /* A punchy rose/coral for the main CTA button */\n\t--color-submit-btn-text: #ffffff;\n\t--color-clear-button-bg: #4B5563;\n\n\t/* State & Notice Colors */\n\t--color-error: #F87171; /* A clear, bright red for errors */\n\t--color-required: #FB923C; /* A vibrant orange for required fields */\n\t--color-test-notice-text: #FBBF24; /* Amber text for notices */\n\t--color-test-notice-bg: #423108; /* Dark, muted yellow background */\n\t--color-test-notice-border: #78350F; /* Dark amber border */\n\t--color-success: #34D399; /* (Bonus) A nice green for success states */\n\n\t/* -- Layout & Sizing (Mostly Unchanged) -- */\n\t--border-radius-card: 12px; /* Slightly more rounded for a modern feel */\n\t--border-radius-input: 8px;\n\t--border-radius-clear-btn: 50%;\n\t--card-border-radius: 12px;\n\n\t/* Spacing */\n\t--padding-container-top: 24px;\n\t--padding-card: 24px;\n\t--padding-test-notice-vertical: 12px;\n\t--padding-test-notice-horizontal: 24px;\n\t--margin-bottom-card: 16px;\n\t--padding-form-input: 12px;\n\t--card-padding: 24px;\n\t--card-margin-bottom: 16px;\n\n\t/* Dimensions */\n\t--container-width: 448px;\n\t--submit-btn-height: 48px;\n\t--checkbox-size: 18px;\n\n\t/* -- Effects & Others -- */\n\t--box-shadow-card: 0px 8px 24px 0px var(--color-card-shadow);\n\t--opacity-placeholder: 0.6; /* Slightly more visible for dark mode */\n}"
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.3,
+      "position": [
+        -1296,
+        -96
+      ],
+      "id": "dfc54611-58d1-4511-8dd2-c89806ecab6b",
+      "name": "On form submission",
+      "webhookId": "1be2cd48-b7e7-42d5-98e6-11485ad55748"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1GlNhsvHehjNTnMAj9TrHzCgTUNnSNxyLiDztKDv8P3Y",
+          "mode": "list",
+          "cachedResultName": "company",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GlNhsvHehjNTnMAj9TrHzCgTUNnSNxyLiDztKDv8P3Y/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GlNhsvHehjNTnMAj9TrHzCgTUNnSNxyLiDztKDv8P3Y/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Company Name": "={{ $json['Company Name'] }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Company Name",
+              "displayName": "Company Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1072,
+        -96
+      ],
+      "id": "2434aa6b-040b-4f05-ba89-fef02dba266f",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "7yUr4DFp0ttJb21M",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Give me the email of this  {{ $json['Company Name'] }}  company and only one email and give nothing except email like here is ur email like that dont give me\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -880,
+        -96
+      ],
+      "id": "b2c399d1-5273-402e-bb72-04f66faa0c9e",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -1056,
+        96
+      ],
+      "id": "dff435d0-d626-4c08-8ec2-563e40a94137",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "2RhsbVEEWgI3CZFv",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('AI Agent').item.json.output }}",
+        "subject": "Internship Request Letter",
+        "emailType": "text",
+        "message": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        416,
+        -96
+      ],
+      "id": "383c9668-968f-43ad-8d56-440afac8336b",
+      "name": "Send a message",
+      "webhookId": "84b1d2bc-ec53-4e8a-aabc-0c235481fe4c",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "1A19c1kT0K9Dh7Nx",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        112
+      ],
+      "id": "70084778-6eea-4d30-ae98-fe4f6b7d7ebd",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "2RhsbVEEWgI3CZFv",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Write an email for requesting an internship offer in aiml and my name is Nangedda Venkateswara Rao. and give me only one template and dont give subject and u will give know like here is ur email like that dont give with only my name and phone number is 7893207811 and search that email company ceo and add his name though, do research and add that company email ceo name {{ $json['Ceo Name'] }} and add that also and company name{{ $json['Company Name'] }}  and ceo\nand here is my linkedin profile link:https://www.linkedin.com/in/venkateswara-rao-nangedda-421ab3338?utm_source=share_via&utm_content=profile&utm_medium=member_android add this also at last and dont add email at last because the email we r sending is there know\n\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        48,
+        -96
+      ],
+      "id": "97b027dd-6e84-4828-9312-e957c09e4b74",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1GlNhsvHehjNTnMAj9TrHzCgTUNnSNxyLiDztKDv8P3Y",
+          "mode": "list",
+          "cachedResultName": "company",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GlNhsvHehjNTnMAj9TrHzCgTUNnSNxyLiDztKDv8P3Y/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GlNhsvHehjNTnMAj9TrHzCgTUNnSNxyLiDztKDv8P3Y/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Company Name": "={{ $('On form submission').item.json['Company Name'] }}",
+            "Email": "={{ $('AI Agent').item.json.output }}",
+            "Ceo Name": "={{ $json.output }}"
+          },
+          "matchingColumns": [
+            "Company Name"
+          ],
+          "schema": [
+            {
+              "id": "Company Name",
+              "displayName": "Company Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Ceo Name",
+              "displayName": "Ceo Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -192,
+        -96
+      ],
+      "id": "b17b2a0d-c531-454d-95de-ea8047151010",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "7yUr4DFp0ttJb21M",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Give me Ceo name of this  {{ $('On form submission').item.json['Company Name'] }} company i want just his name and dont give  anything like here is ur name like that give me just the ceo name",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -528,
+        -96
+      ],
+      "id": "0c87a93a-8247-4fe4-9b07-a1014cec84bd",
+      "name": "AI Agent2"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -768,
+        144
+      ],
+      "id": "31092563-234d-4840-8a9d-cfaea237e584",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "2RhsbVEEWgI3CZFv",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "1b9aa7b3-41ae-4186-9c27-e48779bb885d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a36a13a1096c134a722e0de420cc05cf2334044976d04b81f198272021a2f72f"
+  },
+  "id": "lh9SV7xBxNZQZ8fN",
+  "tags": []
+}
